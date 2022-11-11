@@ -1,0 +1,39 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+install.packages("pdftools")
+library(pdftools)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+
+```{r}
+oct_2022 <- pdf_text("/Users/MatthewZdun/Documents/BSD_MonthlyPermits_22-10.pdf")
+head(oct_2022)
+```
+
+```{r}
+oct_2022[6]
+test <- oct_2022[3]
+test <- strsplit(test, "\n")
+head(test)
+
+head(test)
+
+library(stringr)
+
+test <- str_split_fixed(test, " {2,}", 10)
+head(test)
+data.frame(test)
+```
+
+

@@ -1,0 +1,15 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(pdftools)
+```
+
+```{r}
+file <- pdf_text("grad-project/reports/BSD_MonthlyReports_2022-09.pdf")
+
+cat(file[3])
+```
+
